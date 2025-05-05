@@ -28,10 +28,10 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover === false) cover = "<div class='cover'></div>";
 
-  let fullName = `${variables.name || "Lucy"} ${variables.lastName ||
-    "Boilett"}`;
-  let role = variables.role || "Web Developer";
-  let location = `${variables.city || "Miami"}, ${variables.country || "USA"}`;
+  let fullName = `${variables.name || "First"} ${variables.lastName ||
+    "Last"}`;
+  let role = variables.role || "Job";
+  let location = `${variables.city || "State"}, ${variables.country || "Country"}`;
 
   let avatar = variables.avatarURL || "https://via.placeholder.com/150";
 
