@@ -28,30 +28,17 @@ function render(variables = {}) {
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
   if (variables.includeCover === false) cover = "<div class='cover'></div>";
 
-  let fullName = `${variables.name || "First"} ${variables.lastName ||
-    "Last"}`;
-  let role = variables.role || "Job";
-  let location = `${variables.city || "State"}, ${variables.country || "Country"}`;
+  let fullName = `${variables.name || "First"} ${variables.lastName || "Last"}`;
+  let role = variables.role || "job";
+  let location = `${variables.city || "State"}, ${variables.country ||
+    "Country"}`;
 
   let avatar = variables.avatarURL || "https://via.placeholder.com/150";
 
-  let position =
-    variables.socialMediaPosition === "left"
+  let socialPositionClass =
+    variables.socialMediaPosition === "position-left"
       ? "position-left"
       : "position-right";
-
-  let twitter = variables.twitter
-    ? `<li><a href="https://twitter.com/${variables.twitter}"><i class="fab fa-twitter"></i></a></li>`
-    : "";
-  let github = variables.github
-    ? `<li><a href="https://github.com/${variables.github}"><i class="fab fa-github"></i></a></li>`
-    : "";
-  let linkedin = variables.linkedin
-    ? `<li><a href="https://linkedin.com/in/${variables.linkedin}"><i class="fab fa-linkedin"></i></a></li>`
-    : "";
-  let instagram = variables.instagram
-    ? `<li><a href="https://instagram.com/${variables.instagram}"><i class="fab fa-instagram"></i></a></li>`
-    : "";
 
   // Reset the website body with the new HTML output
   document.querySelector("#widget_content").innerHTML = `<div class="widget">
@@ -60,15 +47,14 @@ function render(variables = {}) {
           <h1>${fullName}</h1>
           <h2>${role}</h2>
           <h3>${location}</h3>
-          <ul class="${position}">
-            ${twitter}
-            ${github}
-            ${linkedin}
-            ${instagram}
+           <ul class="${socialPositionClass}">
+            <li><a href="https://twitter.com/4geeksacademy"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
           </ul>
         </div>`;
 }
-
 /**
  * Don't change any of the lines below, here is where we do the logic for the dropdowns
  */
